@@ -1,0 +1,15 @@
+</head>
+<body>
+    <h1>JSON Song List Raw Data</h1>
+	<pre id="output"></pre>
+
+	<script>
+		fetch('songs.json')
+			.then(response => response.json())
+			.then(data => {
+				document.getElementById('output').innerHTML = JSON.stringify(data, null, 2);
+			})
+			.catch(error => console.error(error));
+    </script>
+</body>
+</html>

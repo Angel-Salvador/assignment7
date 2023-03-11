@@ -1,0 +1,168 @@
+{
+  "songs": [
+    {
+      "title": "Nunca Es Suficiente",
+      "artists": [
+        "Los Angeles Azules",
+        "Natalia Lafourcade"
+      ],
+      "genres": [
+        "Cumbia"
+      ],
+      "year": 2018
+    },
+    {
+      "title": "Tu Falta De Querer",
+      "artists": [
+        "Mon Laferte"
+      ],
+      "genres": [
+        "Latin Rock",
+        "Latin Ballad"
+      ],
+      "year": 2015
+    },
+    {
+      "title": "La Puerta Negra",
+      "artists": [
+        "Los Tigres Del Norte"
+      ],
+      "genres": [
+        "Norteno"
+      ],
+      "year": 1986
+    },
+    {
+      "title": "DESPECHA",
+      "artists": [
+        "Rosalia"
+      ],
+      "genres": [
+        "Mambo",
+        "Pop"
+      ],
+      "year": 2022
+    },
+    {
+      "title": "Como La Flor",
+      "artists": [
+        "Selena"
+      ],
+      "genres": [
+        "Tejano",
+        "Cumbia"
+      ],
+      "year": 1992
+    },
+    {
+      "title": "Ya Lo Se",
+      "artists": [
+        "Jenni Rivera"
+      ],
+      "genres": [
+        "Marachi"
+      ],
+      "year": 2009
+    },
+    {
+      "title": "PROVENZA",
+      "artists": [
+        "Karol G"
+      ],
+      "genres": [
+        "Reggaeton",
+        "Pop"
+      ],
+      "year": 2022
+    },
+    {
+      "title": "Mi Gente",
+      "artists": [
+        "J Balvin",
+        "Willy William",
+        "Vibras"
+      ],
+      "genres": [
+        "Reggaeton",
+        "Moombahton"
+      ],
+      "year": 2017
+    },
+    {
+      "title": "El Sonidito",
+      "artists": [
+        "El Sonidito"
+      ],
+      "genres": [
+        "Electrocumbia"
+      ],
+      "year": 2008
+    },
+    {
+      "title": "Chantaje",
+      "artists": [
+        "Shakira",
+        "Maluma"
+      ],
+      "genres": [
+        "Pop",
+        "Reggaeton"
+      ],
+      "year": 2016
+    },
+    {
+      "title": "La nina fresa",
+      "artists": [
+        "Banda Zeta"
+      ],
+      "genres": [
+        "Zapateado"
+      ],
+      "year": 2007
+    },
+    {
+      "title": "Zapateado Encabronado",
+      "artists": [
+        "Alacranes Musical"
+      ],
+      "genres": [
+        "Zapateado"
+      ],
+      "year": 2018
+    },
+    {
+      "title": "Mi Cucu",
+      "artists": [
+        "La India Meliyara",
+        "La Sonora Dinamita",
+        "Lucho Argain"
+      ],
+      "genres": [
+        "Cumbia"
+      ],
+      "year": 2015
+    },
+    {
+      "title": "Yo Voy (ft. Daddy Yankee)",
+      "artists": [
+        "Zion",
+        "Lennox"
+      ],
+      "genres": [
+        "Reggaeton"
+      ],
+      "year": 2015
+    },
+    {
+      "title": "Rica y Apretadita (feat. Anayka)",
+      "artists": [
+        "El General",
+        "Anayka"
+      ],
+      "genres": [
+        "Reggaeton"
+      ],
+      "year": 1991
+    }
+  ]
+}
