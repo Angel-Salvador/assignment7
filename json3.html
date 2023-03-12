@@ -11,22 +11,22 @@
           <th>Title</th>
           <th>Artist</th>
           <th>Genre</th>
-          <th>Year</th>
+          <th>Released</th>
         </tr>
       </thead>
       <tbody></tbody>
     </table>
     <script>
  function createTableRows(data) {
-  const tbody = document.querySelector("#table tbody");
+  const tbody = document.querySelector("#song-table tbody");
   tbody.innerHTML = "";
   for (const song of data.songs) {
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td>${song.title}</td> </br>
-      <td>${song.artists.join(", ")}</td> </br>
-      <td>${song.genres.join(", ")}</td> </br>
-      <td>${song.year}</td> </br>
+      <td>${song.title}</td>
+      <td>${song.artists.join(", ")}</td>
+      <td>${song.genres.join(",\n")}</td>
+      <td>${song.year}</td>
     `;
     tbody.appendChild(tr);
   }
