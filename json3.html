@@ -5,7 +5,7 @@
     <title>JSON3</title>
   </head>
   <body>
-    <table id="song-table">
+    <table id="table">
       <thead>
         <tr>
           <th>Title</th>
@@ -18,15 +18,15 @@
     </table>
     <script>
  function createTableRows(data) {
-  const tbody = document.querySelector("#song-table tbody");
+  const tbody = document.querySelector("#table tbody");
   tbody.innerHTML = "";
   for (const song of data.songs) {
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td>${song.title}</td>
-      <td>${song.artists.join(", ")}</td>
-      <td>${song.genres.join(", ")}</td>
-      <td>${song.year}</td>
+      <td>${song.title}</td> </br>
+      <td>${song.artists.join(", ")}</td> </br>
+      <td>${song.genres.join(", ")}</td> </br>
+      <td>${song.year}</td> </br>
     `;
     tbody.appendChild(tr);
   }
