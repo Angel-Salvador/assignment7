@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8">
     <title>JSON3</title>
-    <script src="songs.json" defer></script>
   </head>
   <body>
     <table id="song-table">
@@ -18,24 +17,24 @@
       <tbody></tbody>
     </table>
     <script>
-      function createTableRows(data) {
-        const tbody = document.querySelector("#song-table tbody");
-        tbody.innerHTML = "";
-        for (const song of data) {
-          const tr = document.createElement("tr");
-          tr.innerHTML = `
-            <td>${song.title}</td>
-            <td>${song.artist.join(", ")}</td>
-            <td>${song.genre.join(", ")}</td>
-            <td>${song.year}</td>
-          `;
-          tbody.appendChild(tr);
-        }
-      }
+ function createTableRows(data) {
+  const tbody = document.querySelector("#song-table tbody");
+  tbody.innerHTML = "";
+  for (const song of data.songs) {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${song.title}</td>
+      <td>${song.artists.join(", ")}</td>
+      <td>${song.genres.join(", ")}</td>
+      <td>${song.year}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+}
 
-      fetch("songs.json")
-        .then(response => response.json())
-        .then(data => createTableRows(data));
+fetch("songs.json")
+  .then(response => response.json())
+  .then(data => createTableRows(data));
     </script>
   </body>
 </html>
