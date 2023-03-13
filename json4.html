@@ -21,6 +21,7 @@
       </style>
   </head>
   <body>
+    <div class="panel">
     <form>
       <label for="genre">Select Genre:</label>
       <select id="genre"></select>
@@ -34,6 +35,31 @@
       </thead>
       <tbody></tbody>
     </table>
+  </div>
+  
+<style>
+  /* Text and picture column */   
+  .panel{
+      margin: 5% 20% 5% 20%;
+      padding: 2% 5% 2% 5%;
+      align-items: center;
+      justify-content: center;
+      background-color: #104432;
+      align-items: center;
+      /* margin: 0% 20% 0% 20%; */
+  }
+  
+      .panel::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+  .text {
+       font-size: 30px;
+       padding: 10%
+  }
+  </style>
+  
     <script>
       function createTableRows(data) {
         const tbody = document.querySelector("#table tbody");
