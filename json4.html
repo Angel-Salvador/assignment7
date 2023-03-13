@@ -34,7 +34,7 @@
       </thead>
       <tbody></tbody>
     </table>
-    <script>
+    <script>// Populate the songs array with data from the JSON file
         fetch("songs.json")
           .then(response => response.json())
           .then(data => {
@@ -42,7 +42,7 @@
             populateTable(songs);
           });
         
-
+        // Populate the table with rows for each song
         function populateTable(data) {
           tbody.innerHTML = "";
           data.forEach(song => {
@@ -57,6 +57,7 @@
           });
         }
         
+        // Filter the table when the user selects a genre
         select.addEventListener("change", event => {
           const genre = event.target.value;
           const filteredSongs = songs.filter(song => song.genres.includes(genre));
