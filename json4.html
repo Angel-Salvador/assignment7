@@ -22,8 +22,8 @@
   </head>
   <body>
     <form>
-      <label for="genre-select">Select Genre:</label>
-      <select id="genre-select"></select>
+      <label for="genre">Select Genre:</label>
+      <select id="genre"></select>
       <button type="button" onclick="filterSongs()">Filter</button>
     </form>
     <table id="table">
@@ -48,7 +48,7 @@
       }
       
       function populateGenreSelect(data) {
-        const select = document.querySelector("#genre-select");
+        const select = document.querySelector("#genre");
         const genres = new Set();
         for (const song of data.songs) {
           for (const genre of song.genres) {
@@ -64,7 +64,7 @@
       }
 
       function filterSongs() {
-        const selectedGenre = document.querySelector("#genre-select").value;
+        const selectedGenre = document.querySelector("#genre").value;
         fetch("songs.json")
           .then(response => response.json())
           .then(data => {
