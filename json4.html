@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JSON3</title>
+    <style>
+        body {
+          background-color: #e0ffe0;
+        }
+        #genre-filter {
+          display: inline-block;
+          padding: 10px;
+          border-radius: 5px;
+          background-color: #008000;
+          color: #ffffff;
+          font-size: 18px;
+          font-weight: bold;
+          text-transform: uppercase;
+          cursor: pointer;
+        }
+      </style>
+  </head>
+  <body>
+    <form>
+      <label for="genre-select">Select Genre:</label>
+      <select id="genre-select"></select>
+      <button type="button" onclick="filterSongs()">Filter</button>
+    </form>
+    <table id="table">
+      <thead>
+        <tr>
+          <th>Title</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      function createTableRows(data) {
+        const tbody = document.querySelector("#table tbody");
+        tbody.innerHTML = "";
+        for (const song of data.songs) {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td>${song.title}</td>
+          `;
+          tbody.appendChild(tr);
+        }
+      }
+      
+      function populateGenreSelect(data) {
+        const select = document.querySelector("#genre-select");
+        const genres = new Set();
+        for (const song of data.songs) {
+          for (const genre of song.genres) {
+            genres.add(genre);
+          }
+        }
+        for (const genre of genres) {
+          const option = document.createElement("option");
+          option.value = genre;
+          option.textContent = genre;
+          select.appendChild(option);
+        }
+      }
+
+      function filterSongs() {
+        const selectedGenre = document.querySelector("#genre-select").value;
+        fetch("songs.json")
+          .then(response => response.json())
+          .then(data => {
+            const filteredSongs = data.songs.filter(song => song.genres.includes(selectedGenre));
+            createTableRows({ songs: filteredSongs });
+          });
+      }
+
+      fetch("songs.json")
+        .then(response => response.json())
+        .then(data => {
+          createTableRows(data);
+          populateGenreSelect(data);
+        });
+    </script>
+  </body>
+</html>
