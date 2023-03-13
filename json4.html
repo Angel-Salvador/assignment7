@@ -35,49 +35,32 @@
       <tbody></tbody>
     </table>
     <script>
-      function createTableRows(data) {
-        const tbody = document.querySelector("#table tbody");
-        tbody.innerHTML = "";
-        for (const song of data.songs) {
-          const tr = document.createElement("tr");
-          tr.innerHTML = `
-            <td>${song.title}</td>
-          `;
-          tbody.appendChild(tr);
-        }
-      }
-      
-      function populateGenreSelect(data) {
-        const select = document.querySelector("#genre");
-        const genres = new Set();
-        for (const song of data.songs) {
-          for (const genre of song.genres) {
-            genres.add(genre);
-          }
-        }
-        for (const genre of genres) {
-          const option = document.createElement("option");
-          option.value = genre;
-          option.textContent = genre;
-          select.appendChild(option);
-        }
-      }
-
-      function filterSongs() {
-        const selectedGenre = document.querySelector("#genre").value;
         fetch("songs.json")
           .then(response => response.json())
           .then(data => {
-            const filteredSongs = data.songs.filter(song => song.genres.includes(selectedGenre));
-            createTableRows({ songs: filteredSongs });
+            songs.push(...data.songs);
+            populateTable(songs);
           });
-      }
+        
 
-      fetch("songs.json")
-        .then(response => response.json())
-        .then(data => {
-          createTableRows(data);
-          populateGenreSelect(data);
+        function populateTable(data) {
+          tbody.innerHTML = "";
+          data.forEach(song => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+              <td>${song.title}</td>
+              <td>${song.artists.join(", ")}</td>
+              <td>${song.genres.join(", ")}</td>
+              <td>${song.year}</td>
+            `;
+            tbody.appendChild(tr);
+          });
+        }
+        
+        select.addEventListener("change", event => {
+          const genre = event.target.value;
+          const filteredSongs = songs.filter(song => song.genres.includes(genre));
+          populateTable(filteredSongs);
         });
     </script>
   </body>
