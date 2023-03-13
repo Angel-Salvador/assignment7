@@ -17,16 +17,15 @@
       <tbody></tbody>
     </table>
     <script>
- function createTableRows(data) {
+function createTableRows(data) {
   const tbody = document.querySelector("#table tbody");
   tbody.innerHTML = "";
   for (const song of data.songs) {
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td>${song.title}</td>
-      <td>${song.artists.join(", ")}</td>
-      <td>${song.genres.join(",\n")}</td>
-      <td>${song.year}</td>
+      <td>${song.title}<br>${song.year}</td>
+      <td>${song.artists.join("<br>")}</td>
+      <td>${song.genres.join("<br>")}</td>
     `;
     tbody.appendChild(tr);
   }
