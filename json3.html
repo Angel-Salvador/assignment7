@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
     <title>JSON3</title>
   </head>
   <body>
@@ -17,24 +16,25 @@
       <tbody></tbody>
     </table>
     <script>
- function createTableRows(data) {
-  const tbody = document.querySelector("#table tbody");
-  tbody.innerHTML = "";
+function createListItems(data) {
+  const list = document.createElement("ul");
   for (const song of data.songs) {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td>${song.title}</td> </br>
-      <td>${song.artists.join(", ")}</td> </br>
-      <td>${song.genres.join(", ")}</td> </br>
-      <td>${song.year}</td> </br>
+    const listItem = document.createElement("li");
+    listItem.innerHTML = `
+      <strong>${song.title}</strong><br>
+      ${song.artists.join(", ")}<br>
+      ${song.genres.join(", ")}<br>
+      ${song.year}<br>
     `;
-    tbody.appendChild(tr);
+    list.appendChild(listItem);
   }
+  document.body.appendChild(list);
 }
 
 fetch("songs.json")
   .then(response => response.json())
-  .then(data => createTableRows(data));
+  .then(data => createListItems(data));
+
     </script>
   </body>
 </html>
