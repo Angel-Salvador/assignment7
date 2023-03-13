@@ -21,10 +21,10 @@ function createListItems(data) {
   for (const song of data.songs) {
     const listItem = document.createElement("li");
     listItem.innerHTML = `
-      <strong>${song.title}</strong><br>
-      ${song.artists.join(", ")}<br>
-      ${song.genres.join(", ")}<br>
-      ${song.year}<br>
+      <strong>Title: ${song.title}</strong><br>
+      Artist: ${song.artists.join(", ")}<br>
+      Genre: ${song.genres.join(", ")}<br>
+      Released: ${song.year}<br>
     `;
     list.appendChild(listItem);
   }
@@ -34,7 +34,6 @@ function createListItems(data) {
 fetch("songs.json")
   .then(response => response.json())
   .then(data => createListItems(data));
-
     </script>
   </body>
 </html>
